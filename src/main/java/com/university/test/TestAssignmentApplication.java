@@ -7,16 +7,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class TestAssignmentApplication {
-    static UniversityController universityController;
+    private static ConsoleRunner consoleRunner;
 
     @Autowired
-    public TestAssignmentApplication(UniversityController universityController) {
-        this.universityController = universityController;
+    public TestAssignmentApplication(ConsoleRunner consoleRunner) {
+        this.consoleRunner = consoleRunner;
     }
 
     public static void main(String[] args) {
         SpringApplication.run(TestAssignmentApplication.class, args);
-        ConsoleRunner consoleRunner = new ConsoleRunner(universityController);
         consoleRunner.run(args);
     }
 
